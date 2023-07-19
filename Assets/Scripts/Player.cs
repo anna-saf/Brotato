@@ -5,14 +5,20 @@ using Zenject;
 
 public class Player : MonoBehaviour, IPlayer
 {
+
     private Movement _movement;
+    private WeaponCreator _weaponCreator;
     private IEnumerator _moveCoroutine;
 
+    public Transform playerTransform => transform;
+
     [Inject]
-    void Construct(Movement movement)
+    public void Construct(Movement movement, WeaponCreator weaponCreator)
     {
        _movement = movement;
+        _weaponCreator = weaponCreator;
        _movement.Init(this);
+       _weaponCreator.Init(this);
     }
 
     public void Move(Vector3 dir)

@@ -2,13 +2,9 @@ using UnityEngine;
 
 public interface IPlayer
 {
-    public void Move(Vector3 dir)
-    {
+    public Transform playerTransform { get; }
 
-    }
+    public void Move(Vector3 dir);
 
-    public void MoveEnd()
-    {
-
-    }
+    public void MoveEnd();
 } 

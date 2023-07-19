@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - asteroid
+  - ship
   layers:
   - Default
   - TransparentFX
@@ -11,7 +13,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Weapon
   - 
   - 
   - 
@@ -43,4 +45,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 139174469
+    locked: 0
+  - name: Weapon
+    uniqueID: 1204376487
     locked: 0

@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class BootstrapInstaller : MonoInstaller
 {
-    [SerializeField] private GlobalModel _globalModel;
-
+    private const string _globalModel = "GlobalModel";
     public override void InstallBindings()
     {
         BindGlobalModel();
@@ -14,11 +13,9 @@ public class BootstrapInstaller : MonoInstaller
 
     private void BindGlobalModel()
     {
-        GlobalModel globalModel = Container.InstantiatePrefabForComponent<GlobalModel>(_globalModel);
-
         Container
             .Bind<GlobalModel>()
-            .FromInstance(globalModel)
+            .FromComponentInNewPrefabResource(_globalModel)
             .AsSingle();
     }
 
